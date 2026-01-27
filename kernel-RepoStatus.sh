@@ -1,7 +1,7 @@
 
 # Define which Fedora releases to query
 # Superceded by $InstalledReleaseVer, but kept here in case a query is desired for a different version other than what is installed.
-dists=(42 43 rawhide)
+dists="(42 43 rawhide)"
 
 # Define Variables
 Repo_BaseURL="https://download.copr.fedorainfracloud.org/results/@kernel-vanilla"
