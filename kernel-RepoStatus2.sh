@@ -63,7 +63,7 @@ function PerformRepoQuery() {
     	repostring="${repostring} --repofrompath=kvr-${repo},$Repo_BaseURL/${repo}/fedora-\${distro}-$Repo_Arch/"
 	( [[ "${repo}" =~ (fedora|fedora-rc) ]] && [[ "${fedorarc_done}" ]] ) && continue
     	for distro in $InstalledReleaseVer ; do
-        	queryresult="$(eval dnf repoquery $RepoQueryArgs)"
+        	queryresult="$(eval dnf repoquery $RepoQueryArgs)" # Upgraded from previous script to use $RepoQueryArgs.
    	   	printf $Printf_Format "${repo}" "${distro}" "${queryresult:-lookup failed}"
     	done
     	[[ "${repo}" == fedora-rc ]] && fedorarc_done="TRUE"
