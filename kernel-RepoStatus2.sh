@@ -1,15 +1,17 @@
+### Define Variables ###
+
 # Define which Fedora releases to query
 # Superceded by $InstalledReleaseVer, but kept here in case a query is desired for a different version other than what is installed.
 dists="(42 43 rawhide)"
 
-### Define Variables ###
-
+# Version #
 KRepoTool_Version="0.3.1"
 
 # Repo #
 Repo_BaseURL="https://download.copr.fedorainfracloud.org/results/@kernel-vanilla"
 Repo_Arch="x86_64"
 
+# Repo Query Args #
 RepoQueryArgs=" --quiet ${repostring} --disablerepo=* --enablerepo=kvr-* --latest-limit=1 -q kernel --arch x86_64 --qf '%{version}-%{release}'"
 
 # Printf #
@@ -21,6 +23,11 @@ RepoQueryArgs=" --quiet ${repostring} --disablerepo=* --enablerepo=kvr-* --lates
   	# FORMAT="%-15s | %-8s | %-10s\n"
 
 Printf_Format="%-20s %-10s %s\n"
+
+
+###########################################################################################################################
+# FUNCTIONS #																											  #
+###########################################################################################################################
   
 function DisplayBanner() {
 	echo "Kernel-vanilla Repo Query Tool - Version $KRepoTool_Version"
@@ -84,7 +91,7 @@ function RepoQueryTableGenerator() {
         printf -- '--------------------+------+--------------------------------------------------\n'
 }
 
-
+###########################################################################################################################
 
 ### Run Functions ###
 DisplayBanner
