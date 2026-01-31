@@ -11,7 +11,7 @@ KRepoTool_Version="0.3.1"
 Repo_BaseURL="https://download.copr.fedorainfracloud.org/results/@kernel-vanilla"
 Repo_Arch="x86_64"
 
-# Repo Query Args #
+# NEW: Repo Query Args #
 RepoQueryArgs=" --quiet ${repostring} --disablerepo=* --enablerepo=kvr-* --latest-limit=1 -q kernel --arch x86_64 --qf '%{version}-%{release}'"
 
 # Printf #
