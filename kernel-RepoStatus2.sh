@@ -1,3 +1,8 @@
+# kernel-RepoStatus2.sh - Gets Kernel Repo Status & Displays Inside A Table
+#	This script has $RepoQueryArgs variable and other misc. improvements (needs testing!)
+# 
+## TODO: Use Cecho.
+
 ### Define Variables ###
 
 # Define which Fedora releases to query
