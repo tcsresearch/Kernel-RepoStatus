@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### Define Variables ###
 
 # Define which Fedora releases to query
