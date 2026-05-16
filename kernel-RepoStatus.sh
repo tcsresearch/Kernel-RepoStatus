@@ -5,6 +5,7 @@
 # Define which Fedora releases to query
 # Superceded by $InstalledReleaseVer, but kept here in case a query is desired for a different version other than what is installed.
 dists="(42 43 rawhide)"
+export dists
 
 KRepoTool_Version="0.3"
 
