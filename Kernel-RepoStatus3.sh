@@ -25,8 +25,11 @@ function KRS_SourceFunctionsFile() {
         break
     fi
 
+### Run Fuctions - Source Config & Functions Files ###
+KRS_SourceConfigFile
+KRS_SourceFunctionsFile
 
-### Run Functions ###
+### Run Functions - Main ###
 DisplayBanner
 GetCurrentReleaseVersion
 Clean_Dnf
