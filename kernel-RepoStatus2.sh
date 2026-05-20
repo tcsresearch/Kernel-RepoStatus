@@ -72,7 +72,7 @@ function PerformRepoQuery() {
 	( [[ "${repo}" =~ (fedora|fedora-rc) ]] && [[ "${fedorarc_done}" ]] ) && continue
     	for distro in $InstalledReleaseVer ; do
         	queryresult="$(eval dnf repoquery $RepoQueryArgs)" # Upgraded from previous script to use $RepoQueryArgs.
-   	   	printf $Printf_Format "${repo}" "${distro}" "${queryresult:-lookup failed}"
+   	   	printf "$Printf_Format" "${repo}" "${distro}" "${queryresult:-lookup failed}"
     	done
     	[[ "${repo}" == fedora-rc ]] && fedorarc_done="TRUE"
 	done
