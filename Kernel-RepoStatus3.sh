@@ -13,7 +13,17 @@ function KRS_SourceConfigFile() {
         echo "ERROR: Functions File $KRS_ConfigFile Not Found!"
         break
     fi
+}
 
+function KRS_SourceFunctionsFile() {
+    # Source Our Functions File
+    if [ "-f" "$KRS_FunctionsFile" ]; then
+        # shellcheck source=/dev/null
+        source "$KRS_FunctionsFile"
+    else
+        echo "ERROR: Functions File $KRS_FunctionsFile Not Found!"
+        break
+    fi
 
 
 ### Run Functions ###
