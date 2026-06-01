@@ -11,7 +11,7 @@ function KRS_SourceConfigFile() {
         source "$KRS_ConfigFile"
     else
         echo "ERROR: Functions File $KRS_ConfigFile Not Found!"
-        break
+         return # Per shellcheck, using in lieu of 'break'.
     fi
 }
 
@@ -22,7 +22,7 @@ function KRS_SourceFunctionsFile() {
         source "$KRS_FunctionsFile"
     else
         echo "ERROR: Functions File $KRS_FunctionsFile Not Found!"
-        break
+        return # Per shellcheck, using in lieu of 'break'.
     fi
 }
 
