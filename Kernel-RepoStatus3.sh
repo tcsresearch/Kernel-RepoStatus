@@ -1,3 +1,4 @@
+#!/bin/env bash
 # Kernel-RepoStatus3.sh - SplitConfig Enabled
 
 # Source our config #
