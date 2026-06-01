@@ -50,7 +50,8 @@ function PerformRepoQuery() {
     	[[ "${repo}" =~ (fedora|next)$ ]] && unset repostring
     	
     	repostring="${repostring} --repofrompath=kvr-${repo},$Repo_BaseURL/${repo}/fedora-\${distro}-$Repo_Arch/"
-		( [[ "${repo}" =~ (fedora|fedora-rc) ]] && [[ "${fedorarc_done}" ]] ) && continue
+###		( [[ "${repo}" =~ (fedora|fedora-rc) ]] && [[ "${fedorarc_done}" ]] ) && continue
+		{ [[ "${repo}" =~ (fedora|fedora-rc) ]] && [[ "${fedorarc_done}" ]]; } && continue
 	    	for distro in $InstalledReleaseVer ; do
 ###        	queryresult="$(eval dnf repoquery --quiet ${repostring} --disablerepo=* --enablerepo=kvr-* --latest-limit=1 -q kernel --arch x86_64 --qf '%{version}-%{release}')"
 			queryresult="$(eval dnf repoquery --quiet "${repostring}" --disablerepo=* --enablerepo=kvr-* --latest-limit=1 -q kernel --arch x86_64 --qf '%{version}-%{release}')"
