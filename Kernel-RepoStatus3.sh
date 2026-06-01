@@ -24,6 +24,7 @@ function KRS_SourceFunctionsFile() {
         echo "ERROR: Functions File $KRS_FunctionsFile Not Found!"
         break
     fi
+}
 
 ### Run Fuctions - Source Config & Functions Files ###
 KRS_SourceConfigFile
